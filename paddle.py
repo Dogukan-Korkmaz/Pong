@@ -1,21 +1,16 @@
 from turtle import Turtle
 
-UP = 90
-DOWN = 270
-
 
 class Paddle(Turtle):
 
-    def __init__(self):
+    def __init__(self, position):
         super().__init__()
-
-    def create_paddle(self):
         self.penup()
         self.shape("square")
         self.color("white")
         self.shapesize(4, 1, 5)
         self.speed("fastest")
-        self.setpos(379, 0)
+        self.goto(position)
 
     def up(self):
         new_y = self.ycor() + 20
