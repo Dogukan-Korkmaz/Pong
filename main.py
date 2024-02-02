@@ -34,12 +34,16 @@ while game_is_on:
     if ball.xcor() > 340 and ball.distance(player_right) < 50 or ball.xcor() < -340 and ball.distance(player_left) < 50:
         ball.bounce_x()
 
+    # Detect player_right misses
     if ball.xcor() > 380:
         point_player_left += 1
+        ball.reset_position()
         print("ball go brrr")
 
+    # Detect player_left misses
     if ball.xcor() < -380:
         point_player_right += 1
+        ball.reset_position()
         print("ball go dog")
 
     ball.move()
