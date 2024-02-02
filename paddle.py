@@ -11,11 +11,15 @@ class Paddle(Turtle):
         self.shapesize(4, 1, 5)
         self.speed("fastest")
         self.goto(position)
+        self.paddle_speed = 30
 
     def up(self):
-        new_y = self.ycor() + 30
+        new_y = self.ycor() + self.paddle_speed
         self.goto(self.xcor(), new_y)
 
     def down(self):
-        new_y = self.ycor() - 30
+        new_y = self.ycor() - self.paddle_speed
         self.goto(self.xcor(), new_y)
+
+    def speed_up(self):
+        self.paddle_speed += 1
